@@ -21,5 +21,13 @@ namespace homework3.BusinessLogic
 
             return _userInfoService.GetById(id);
         }
+
+        public Task<User> Append(User user)
+        {
+            if (user == null)
+                throw new ArgumentException("Некорректный экземпляр User", nameof(user));
+
+            return _userInfoService.AppendUser(user);
+        }
     }
 }
